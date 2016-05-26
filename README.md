@@ -56,7 +56,7 @@ airflow backfill incremental_load -s 2009-01-01
 
 
 
-Command used inside airflow script is below for refrence.
+Command used inside airflow script is below for  refrence.
 
 incremental import to HDFS
 
