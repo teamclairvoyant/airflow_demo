@@ -59,57 +59,87 @@ Airflow runs on python 2.7 and pip2.7
 
 CentOS Install
 ### 1)Development tools required :
+
 SSH onto the target machine
+
 sudo yum groupinstall "Development tools"
+
 ### 2)Extra libs needed:
+
 sudo yum install zlib-devel
+
 sudo yum install bzip2-devel
+
 sudo yum install openssl-devel
+
 sudo yum install ncurses-devel
+
 sudo yum install sqlite-devel
+
 sudo yum install python-devel
 
 **Note:- If Python installed is lower than Python 2.7.x then follow these steps 3 and 4.**
 ### 3)$Python -V
+
 ### 4)Downloading and installing Python 2.7.6
+
 cd /opt
+
 sudo wget --no-check-certificate https://www.python.org/ftp/python/2.7.6/Python-2.7.6.tar.xz
+
 tar xf Python-2.7.6.tar.xz
+
 cd Python-2.7.6
+
 ./configure --prefix=/usr/local
+
 make && make altinstall
+
 ls -ltr /usr/local/bin/python*
+
 $vi ~/.bashrc
+
 add this line alias python='/usr/local/bin/python2.7'
 
 ### 5)Getting the setup Tools:
-sudo wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py
+sudo wget https://bootstrap.pypa.io/ez_setup.py
 
-sudo /usr/bin/python2.7 ez_setup.py
+sudo /usr/local/bin/python2.7 ez_setup.py
+
 sudo unzip setuptools-20.4.zip
+
 cd setuptools-20.4
-sudo /usr/bin/easy_install-2.7 pip
+
+sudo /usr/local/bin/easy_install-2.7 pip
 
 ### 6)Installing Airflow and other required packages:
+
 sudo yum install numpy scipy python-matplotlib ipython python-pandas sympy python-nose
+
  airflow needs a home, ~/airflow is the default,
+ 
  but you can lay foundation somewhere else if you prefer
  (optional)
+ 
 export AIRFLOW_HOME=~/airflow
 
-sudo /usr/bin/pip2.7 install pysqlite
-sudo /usr/bin/pip2.7 install airflow
+sudo /usr/local/bin/pip2.7 install pysqlite
+
+sudo /usr/local/bin/pip2.7 install airflow
 
 
 ## Now use our Airflow script to do the incremental import job
 
 ### Start webserver to check task airflow through UI
+
 sudo airflow webserver -p 8080
 
 ### To run the Airflow use below command
+
 airflow backfill incremental_load -s 2015-06-01
 
 ### To test the individual task in a airflow DAG use below command
+
 airflow test incremental_load hive_insert_masked 2015-06-01;
 
 
