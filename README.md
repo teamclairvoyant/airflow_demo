@@ -135,11 +135,17 @@ sudo pip2.7 install airflow[mysql]
 
 yum install rabbitmq-server
 
+sudo yum install mysql-devel
+
+sudo pip install mysql-python
+
 airflow initdb
 
 for using celery executor use below in airflow.cfg
 
-sql_alchemy_conn =mysql://root:cloudera@localhost:3306/airflowdb
+sql_alchemy_conn =mysql://ro
+
+ot:cloudera@localhost:3306/airflowdb
  
 executor = CeleryExecutor
  
