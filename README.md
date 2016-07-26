@@ -137,6 +137,16 @@ yum install rabbitmq-server
 
 airflow initdb
 
+for using celery executor use below in airflow.cfg
+
+sql_alchemy_conn =mysql://root:cloudera@localhost:3306/airflowdb
+ 
+executor = CeleryExecutor
+ 
+broker_url = amqp://guest:guest@localhost:5672/
+ 
+celery_result_backend = db+mysql://root:cloudera@localhost:3306/airflow
+
 
 ## Now use our Airflow script to do the incremental import job
 
