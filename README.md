@@ -127,6 +127,16 @@ sudo /usr/local/bin/pip2.7 install pysqlite
 
 sudo /usr/local/bin/pip2.7 install airflow
 
+sudo pip2.7 install airflow[hive]
+
+sudo pip2.7 install airflow[celery]
+
+sudo pip2.7 install airflow[mysql]
+
+yum install rabbitmq-server
+
+airflow initdb
+
 
 ## Now use our Airflow script to do the incremental import job
 
