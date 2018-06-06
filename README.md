@@ -13,7 +13,7 @@ Mysql has table called 'employee_profile' having employee information having fir
 			`ssn` VARCHAR(45) NULL,
 			 PRIMARY KEY (`profile_id`) );
 			 
-###ii) Insert base data in mysql employee_profile
+### ii) Insert base data in mysql employee_profile
 
 		INSERT INTO `employee_profile` (`profile_id`, `first_name`, `last_name`, `modified_date`,`ssn`) VALUES ('1', 'FristName1', 'LastName1', '2015-12-01 11:24:35','111-11-1111');
 
@@ -43,7 +43,7 @@ Mysql has table called 'employee_profile' having employee information having fir
 
 
 
-###     v) update data in mysql to test incremental import
+### v) update data in mysql to test incremental import
 			INSERT INTO `employee_profile` (`profile_id`, `first_name`, `last_name`, `modified_date`,`ssn`) VALUES ('6', 'FristName6', 'LastName6', '2015-12-11 11:25:35','666-66-6666');
 
 			INSERT INTO `employee_profile` (`profile_id`, `first_name`, `last_name`, `modified_date`,`ssn`) VALUES ('7', 'FristName7', 'LastName7', '2016-12-12 11:24:35','111-22-1111');
@@ -79,6 +79,7 @@ sudo yum install sqlite-devel
 sudo yum install python-devel
 
 **Note:- If Python installed is lower than Python 2.7.x then follow these steps 3 and 4.**
+
 ### 3)$Python -V
 
 ### 4)Downloading and installing Python 2.7.6
